@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..requests import get_sources,get_articles
+from ..requests import get_sources,get_articles,get_updates
 from ..models import Sources
 
 # Views
@@ -26,3 +26,10 @@ def articles(id):
 	title = f'NH | {id}'
 
 	return render_template('articles.html',title= title,articles = articles)
+
+
+@main.route('/update/<id>')
+def article(id):
+    detz_articles = get_updates(id)
+    print(detz_articles)
+    return render_template('news-update.html',detz = detz_articles)
