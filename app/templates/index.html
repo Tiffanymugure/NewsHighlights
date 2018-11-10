@@ -1,14 +1,75 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best Movie Review website </title>
-        {% endif %}
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Get breaking news headlines,sports and entertainment and search for articles from various news sources and blogs </title>
+    {% endif %}
+</head>
+
+<body>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+{% block content%}
+<div class="container">
+        <hr>
+        <div class="container-fluid">
+     <h2 style="color:#5353a8;">News by category</h2>
+     <hr>
+     <center>
+         <ul class="nav nav-tabs">
+             <li class="active"><a data-toggle="tab" href="#biz">Business news</a></li>
+             <li><a data-toggle="tab" href="#ent">Entertainment news</a></li>
+             <li><a data-toggle="tab" href="#tech">Technology news</a></li>
+             <li><a data-toggle="tab" href="#sprt">Sports news</a></li>
+         </ul>
+     </center>
+     <div class="tab-content">
+            <div class="tab-pane fade in active" id="biz">
+
+		<!-- Business News Section  -->
+        <h3> Top Business News Sources</h3>
+        <hr>
+
+        {{ macro.displaySourceList(sources)}}
+
+        <!-- Entertainment News Section  -->
+                 <div class="tab-pane fade" id="ent">
+
+        <h3> Top Entertainment News Sources</h3>
+        <hr>
+
+        {{ macro.displaySourceList(entertainment_sources)}}
+
+        <!-- Technology News Section  -->
+                 <div class="tab-pane fade" id="tech">
+
+        <h3> Top Technology News Sources</h3>
+        <hr>
+
+        {{ macro.displaySourceList(technology_sources)}}
+
+        <!-- Sports News Section  -->
+                 <div class="tab-pane fade" id="sprt">
+
+        <h3> Top Sports News Sources</h3>
+        <hr>
+
+        {{ macro.displaySourceList(sports_sources)}}
+	
+</div>
+
+
+{%endblock%}
+
+
+</body>
 </html>
+
+
