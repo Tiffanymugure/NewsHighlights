@@ -1,6 +1,5 @@
-
 import unittest
-from app.models import Sources,Articles
+from app.models import Sources, Articles
 
 class SourcesTest(unittest.TestCase):
     '''
@@ -29,3 +28,22 @@ class ArticlesTest(unittest.TestCase):
     '''
     Test Class to test the behaviour of the Movie class
     '''
+
+    def setUp(self):
+        '''
+        Set up method that will run before every Test
+        '''
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_article,Articles))
+
+    def test_to_check_instance_variables(self):
+        self.assertEquals(self.new_article.id,'CNN')
+        self.assertEquals(self.new_article.author,'Amira Mugure')
+        self.assertEquals(self.new_article.title,'Centomy should help Africa grow')
+        self.assertEquals(self.new_article.description,'A look at how centonomy can grow Africas blue economy')
+        self.assertEquals(self.new_article.url,'centonomy.com')
+        self.assertEquals(self.new_article.image,'centonomy.com/7643t94.jpg')
+
+
+

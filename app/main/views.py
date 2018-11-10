@@ -9,7 +9,7 @@ def index ():
     '''
     view root page function that returns the index page and its data
     '''
-    sources = get sources ('business')
+    sources = get_sources ('business')
     entertainment_sources = get_sources('entertainment')
     technology_sources = get_sources('technology')
     sports_sources = get_sources('sports')
