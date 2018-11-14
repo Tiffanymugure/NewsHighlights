@@ -12,5 +12,3 @@ class BasicsTestCase(unittest.TestCase):
 
         self.app_context.pop()
 
-    def test_app_exists(self):
-        
