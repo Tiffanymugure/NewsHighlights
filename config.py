@@ -1,10 +1,9 @@
+import os
+
 class Config:
-    '''
-    General configuration parent class
-    '''
-    pass
-
-
+    
+    NEWS_SOURCES_BASE_URL=''
+    ARTICLES_BASE_URL =''
 
 class ProdConfig(Config):
     '''
@@ -17,19 +16,15 @@ class ProdConfig(Config):
 
 
 class DevConfig(Config):
-    '''
-    Development  configuration child class
-
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
-
-
-class Config:
-    '''
-    General configuration parent class
-    '''
-    SOURCES_API_BASE_URL ='https://api.thenewsdb.org/3/news/{}?api_key={}'
-
-
     DEBUG = True
+
+# class Config:
+#     '''
+#     General configuration parent class
+#     '''
+#     SOURCES_API_BASE_URL ='https://api.thenewsdb.org/3/news/{}?api
+
+config_options ={
+    'development':DevConfig,
+    'production':ProdConfig
+}

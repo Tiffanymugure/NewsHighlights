@@ -2,6 +2,7 @@ import urllib.request,json
 from .models import Sources,Articles
 from datetime import datetime
 
+
 #getting the api key
 api_key = None
 
@@ -87,10 +88,11 @@ def process_articles(articles_list):
 		title = article_item.get('title')
 		description = article_item.get('description')
 		url = article_item.get('url')
+		image = article_item.get('urlToImage')
 		date = article_item.get('publishedAt')
 		
 		if image:
-			articles_result = Articles(id,author,title,description,url)
+			articles_result = Articles(id,author,title,description,url,image,date)
 			articles_object.append(articles_result)	
 		
 
