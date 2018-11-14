@@ -1,4 +1,4 @@
-#!/home/amira/NewsHighlights/virtual/bin/python
+#!/home/amira/NewsHighlights/virtual/bin/python3.6
 
 # -*- coding: utf-8 -*-
 import re
