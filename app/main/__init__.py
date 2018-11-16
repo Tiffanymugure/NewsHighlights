@@ -1,10 +1,4 @@
-from flask import Flask
-from .config import DevConfig
+from flask import Blueprint
+main = Blueprint('main',__name__)
+from . import views,errors
 
-# Initializing application
-app = Flask(__name__)
-
-# Setting up configuration
-app.config.from_object(DevConfig)
-
-from app import views
