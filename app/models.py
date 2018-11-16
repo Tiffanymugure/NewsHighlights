@@ -25,14 +25,14 @@ class Articles:
         self.image = image
         self.date = date
 
-class Update:
-    """
-    update class to define articles objects
-    """
-    def __init__(self, id, author, title, description, url,publishedAt):
-        self.id = id
-        self.author = author
-        self.title = title
-        self.description = description
-        self.url = url  
-        self.publishedAt = publishedAt
+# class Update:
+#     """
+#     update class to define articles objects
+#     """
+#     def __init__(self, id, author, title, description, url,publishedAt):
+#         self.id = id
+#         self.author = author
+#         self.title = title
+#         self.description = description
+#         self.url = url  
+#         self.publishedAt = publishedAt

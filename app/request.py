@@ -13,10 +13,11 @@ base_url = None
 articles_url = None
 
 def configure_request(app):
+	
 	global api_key,base_url,articles_url
 	api_key = app.config['NEWS_API_KEY']
 	base_url = app.config['NEWS_SOURCES_BASE_URL']
-	articles_url = app.config['ARTICLES_BASE_URL']
+	articles_url = app.config['SPECIFIC_SOURCE_API_URL']
 
 def get_sources(category):
 	'''
@@ -29,7 +30,6 @@ def get_sources(category):
 		get_sources_response = json.loads(get_sources_data)
 
 		sources_results = None
-
 		if get_sources_response['sources']:
 			sources_results_list = get_sources_response['sources']
 			sources_results = process_sources(sources_results_list)
@@ -96,8 +96,55 @@ def process_articles(articles_list):
 			articles_object.append(articles_result)	
 		
 
-		
-
-		
-
 	return articles_object
+
+
+
+# SEARCH ARTICLES
+
+def search_article(article_name):
+    '''
+        Function that searches articles using the key words inputted. 
+    '''
+
+    search_article_url = 'https://newsapi.org/v2/everything?language=en&q={}&apiKey={}'.format(article_name,api_key)
+
+    with urllib.request.urlopen(search_article_url) as url:
+
+        search_article_data = url.read()
+        search_article_response = json.loads(search_article_data)
+
+        search_article = None
+
+        if search_article_response['articles']:
+            search_article_list = search_article_response['articles']
+            search_article = process_articles(search_article_list)
+
+    return search_article
+
+# def get_update(id):
+# 	'''
+# 	Function that processes the update and returns a list of update objects
+# 	'''
+# 	update_results = json.loads(url.read())
+# 	update_object = None
+# 	if update_results['update']:
+# 		update_object = process_update(update_results['update'])
+
+# 	return update_object
+
+
+
+
+# def process_update(update_list):
+# 		update_object = []
+# for update_item in update_list:
+# 		id = update_item.get('id')
+# 		author = update_item.get('author')
+# 		title = update_item.get('title')
+# 		description = update_item.get('description')
+# 		if update:
+# 			update_result = Update(id,author,title,description,date)
+# 			update_object.append(update_result)	
+# return update_object
+
