@@ -1,26 +1,62 @@
-# News Highlights
-This app allows you to get top headlines news and news based on four categories as well: Business news, Technology news, Sports news and Entertainment news. The live site : 
+# NEWS HIGHLIGHTS
+Built by Amira Mugure
 
-## Prerequisites
-Python 3.6 required
-Setup/Installation Requirements
-Clone the repository
-Edit the start.sh file with your api key from: http://newsapi.org/
-Install python 3.6
-Run chmod a+x start.sh
-Run ./start.sh
+## Description
+A news site showing news articles from various publishers; with users being able to select a publisher, view articles from them along with their image, description and time of creation.
 
-## Known Bugs
-There are no known bugs but incase of any, find my contact details below.
+## User Requirements
+* Your users should be able to see various news sources and select the ones they prefer
+* Your users should be able to see all the news articles from that news source
+* The user should see the image description and time the news article was created.
+* The user should also be able to click on an article and read it fully from the news source.
 
-## Technolgies used
-This application was made with Python version 3.6 using the flask framework. The templates were made using html and was styles using css and bootstrap.
+## Features
+-[x] List multiple news sources 
+-[ ] Listing of articles from the selected news source 
+-[x] Categorisation of news networks 
+-[ ] Using flask sessions to save users article snippet 
+-[ ] Using of browser cookies to store favourite news sources 
+-[ ] Redirection of user to articles
 
-## Support and Contact details
-Incase of additions or if you run into any issues, my email address is: amiratiffany@gmail.com
+## Installation
+### Requirements
+This project was created on a debian linux platform but should work on other unix based[not limited to] sytems.
+Python 3.6.4
 
-## License
-This project is licensed under the terms of the MIT license. Copyright (c) 2018 Tiffany Mugure
+## Cloning of the respository
+In terminal:
+* $ git clone https://eleza.herokuapp.com/
 
-## Acknowledgments
-Used the news API key from: http://newsapi.org/
+## Creating the Virtual Environment
+* sudo apt-get install python3.6-venv
+* python3.6 -m venv virtual
+* source virtual/bin/activate
+
+## Install Dependencies
+* pip3 install -r requirements
+
+## Required Libraries
+* Flask==0.12.2
+* Flask-Bootstrap==3.3.7.1
+* Flask-Script==2.0.6
+* gunicorn==19.7.1
+
+## Running Tests
+* python3 manage.py test
+
+## Running the web app
+* python3 manage.py server
+* open app in browser by default on 127.0.0.1:5000
+
+## Technology Used
+Python3.6
+
+Flask
+
+Heroku
+
+## License Information
+MIT License
+
+Copyright(c) 2018 Tiffany Mugure
+
