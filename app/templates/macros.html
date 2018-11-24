@@ -1,30 +1,23 @@
-{% macro displaySourceList(source_list) %}
-
-	{% for source_row in source_list |batch(4)%}
-        <div class="row">
-        	
-	        	
-            {% for sources in source_row %}
-	            <div class="col-md-3">
-		           
-		            <div class="panel panel-default">
-						<div class="panel-heading">
-							<a href="/sources/{{sources.id}}">
-							    {{ sources.name}}
-					        </a>
-						</div>
-						<div class="panel-body">
-							<p>
-								{{ sources.description |truncate(100)}}
-
-							</p>
-							<a href="/sources/{{sources.id}}" class="btn btn-success btn-sm">Visit {{sources.name}}</a>
-						</div>
-						
-		
-					</div>
-		        </div>
-            {% endfor %}  	
+{% macro displaySources(source_list)%}
+    {% for source in source_list %}
+        <div class ="card mt-3" style="width: 300px;">
+            <div class="card-header" style="background-color: rgb(169, 218, 203);">
+                <h3 class="names">{{source.name}}</h3>
+            </div>
+            <div class="card-body" style="background-color: rgb(169, 218, 203;">
+            <h5 class="card-title">{{source.description}}</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>language:{{source.language}}</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>country:{{source.country}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer embed-responsive-item">
+                <a href="/sources/{{source.id}}" class="btn btn-info btn-sm">EXPLORE</a>
+            </div>
         </div>
-	{% endfor %}
+    {% endfor %}
 {% endmacro %}
